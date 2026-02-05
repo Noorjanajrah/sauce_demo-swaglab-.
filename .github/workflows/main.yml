@@ -1,0 +1,16 @@
+name: Deploy Project Reports
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest # هذا هو الـ GitHub Runner المطلوب
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Deploying Reports
+        run: |
+          echo "Processing HTML reports..."
+          ls -R # لعرض قائمة الملفات للتأكد من وجودها

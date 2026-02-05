@@ -1,16 +1,15 @@
-name: Deploy Project Reports
+name: Run Testing Reports
 on:
   push:
-    branches: [ "main" ]
+    branches: [ main ]
 
 jobs:
-  build-and-deploy:
-    runs-on: ubuntu-latest # هذا هو الـ GitHub Runner المطلوب
+  test:
+    runs-on: ubuntu-latest # هذا هو الـ GitHub Runner
     steps:
-      - name: Checkout Code
-        uses: actions/checkout@v4
-
-      - name: Deploying Reports
+      - uses: actions/checkout@v4
+      
+      - name: Run Report Status
         run: |
-          echo "Processing HTML reports..."
-          ls -R # لعرض قائمة الملفات للتأكد من وجودها
+          echo "Automated Testing Sequence Started"
+          echo "Deploying sauce_demo reports..."

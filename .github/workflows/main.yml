@@ -1,15 +1,24 @@
-name: Run Testing Reports
+name: Sauce Demo Automated Testing
 on:
   push:
-    branches: [ main ]
+    branches: [ "main", "dev-automation" ]
+  pull_request:
+    branches: [ "main" ]
 
 jobs:
-  test:
-    runs-on: ubuntu-latest # هذا هو الـ GitHub Runner
+  test-automation:
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      
-      - name: Run Report Status
-        run: |
-          echo "Automated Testing Sequence Started"
-          echo "Deploying sauce_demo reports..."
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Newman
+        run: npm install -g newman
+
+      - name: Run Postman Tests
+        run: newman run "saucedemo.postman_collection.json" -e "DummyJSON.postman_environment.json"

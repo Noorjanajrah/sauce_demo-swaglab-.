@@ -1,6 +1,6 @@
 ![Test Status](https://github.com/Noorjanajrah/sauce_demo-swaglab-../actions/workflows/main.yml/badge.svg)
 
-Sauce Demo: Comprehensive QA & Automation Project 🚀
+Sauce Demo: Comprehensive QA & Automation Project 
 1. Project Overview
 This project demonstrates an end-to-end Quality Assurance strategy for the Sauce Demo e-commerce application. It covers the full testing lifecycle, from strategic planning to automated execution using CI/CD pipelines.
 
